@@ -45,7 +45,7 @@ export default function Education
             <motion.div
                 style={{ scaleY: scrollYProgress }}
                 className="absolute left-9 top-0 w-[3px] h-full bg-colors-dark origin-top pt-4 dark:bg-colors-light
-                    md:w-[2px] md:left-[30px] xs:left-[20px]
+                    md:w-[2px] md:left-[30px] xs:left-[19px]
                 " />
             <ul className="w-full flex flex-col items-start justify-between ml-4 ">
                 <Details type="Bacharelado Em Engenharia Elétrica" time="2019 - 2024" place="Instituto Federal De São Paulo" info="Desenvolvimento de sistemas elétricos, automação de sistemas industriais, entre outros."
