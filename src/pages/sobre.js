@@ -18,7 +18,7 @@ export default function Sobre() {
 
             <main className="flex w-full flex-col items-center justify-center dark:text-colors-light">
                 <Layout className="pt-16">
-                    <AnimatedText text="Um Pouco Sobre Mim." className="mb-16 lg:!text-7xl sm:!text-6xl xs:!text-4xl" />
+                    <AnimatedText text="Um Pouco Sobre Mim." className="mb-16 lg:!text-7xl sm:!text-6xl xs:!text-4xl !text-6xl" />
                     <div className="grid w-full gap-16">
                         <div className=" flex flex-col items-start justify-start">
                             <h2 className="mb-4 text-lg font-bold uppercase text-colors-dark/75 dark:text-colors-light/75">Biografia</h2>

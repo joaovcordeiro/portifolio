@@ -1,7 +1,8 @@
 import Layout from '@/components/Layout'
 import Head from 'next/head'
 import Image from 'next/image'
-import picture from "../../public/images/profile/wolf-pic.png"
+import picture from "../../public/images/profile/wolf.png"
+import bulbPicture from "../../public/images/profile/bulb.png"
 import AnimatedText from '@/components/AnimatedText'
 import Link from 'next/link'
 import { BulbIcon, LinkArrow } from '@/components/Icons'
@@ -21,7 +22,7 @@ export default function Home() {
         <Layout className='pt-0 md:p-16 sm:pt-8'>
           <div className='flex items-center justify-between w-full lg:flex-col'>
             <div className='w-1/2 md:w-full'>
-              <Image src={picture} alt="Wolf picture" className='w-3/4 h-auto lg:hidden md:inline-block md:w-full' priority sizes='(max-width: 760px) 100vw, (max-width: 1200px) 50vw, 50vw ' />
+              <Image src={picture} alt="Wolf picture" className='w-full h-auto md:mb-6 md:inline-block ' priority sizes='(max-width: 760px) 100vw, (max-width: 1200px) 50vw, 50vw ' />
             </div>
             <div className='w-1/2 flex flex-col items-center self-center lg:w-full lg:text-center'>
               <AnimatedText text="Tornando Inspirações Em Realidade Com Código." className='!text-6xl !text-left xl:!text-5xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl' />
@@ -40,8 +41,9 @@ export default function Home() {
                 {/* <Link href="mailto:jjvictorac@gmail.com" target={"_blank"} className='ml-4 text-lg font-medium capitalize text-colors-dark underline dark:text-colors-light md:text-base'>Contato</Link> */}
               </div>
             </div>
+            <Image src={bulbPicture} alt='LightBulb picture' className='w-1/6 absolute right-0 bottom-0 md:bottom-4' />
           </div>
-          <BulbIcon className="dark:fill-colors-light absolute right-8 bottom-4 inline-block lg:w-32 md:hidden" title='Designed by rawpixel.com / Freepik' alt="Light Bulb" />
+          {/* <BulbIcon className="dark:fill-colors-light absolute right-8 bottom-4 inline-block lg:w-32 md:hidden" title='Designed by rawpixel.com / Freepik' alt="Light Bulb" /> */}
         </Layout>
         <HireMe />
       </main >

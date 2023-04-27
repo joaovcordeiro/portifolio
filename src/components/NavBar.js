@@ -69,6 +69,8 @@ export default function NavBar() {
                     <CustomLink href="/" title="Home" className="mr-4" />
                     <CustomLink href="/sobre" title="Sobre" className="mx-4" />
                     <CustomLink href="/projetos" title="Projetos" className="mx-4" />
+                    <CustomLink href="/contato" title="Contato" className="mx-4" />
+
                 </nav>
 
                 <nav className="flex items-center justify-center ">
@@ -100,6 +102,8 @@ export default function NavBar() {
                             <CustomMobileLink href="/" title="Home" className="" toogle={handleClick} />
                             <CustomMobileLink href="/sobre" title="Sobre" className="" toogle={handleClick} />
                             <CustomMobileLink href="/projetos" title="Projetos" className="" toogle={handleClick} />
+                            <CustomMobileLink href="/contato" title="Contato" className="" toogle={handleClick} />
+
                         </nav>
 
                         <nav className="flex items-center justify-center mt-2">
