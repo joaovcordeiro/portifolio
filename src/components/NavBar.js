@@ -4,8 +4,7 @@ import { useRouter } from "next/router";
 import { GithubIcon, LinkedInIcon, SunIcon, MoonIcon } from "./Icons";
 import { motion } from "framer-motion";
 import useThemeSwitcher from "./hooks/useThemeSwitcher";
-import { useState } from "react";
-import HireMe from "./HireMe";
+import { useEffect, useRef, useState } from "react";
 
 const CustomLink = ({
     href, title, className = ""
@@ -47,10 +46,25 @@ export default function NavBar() {
 
     const [mode, setMode] = useThemeSwitcher();
     const [isOpen, setIsOpen] = useState(false);
+    const menuRef = useRef(null);
 
     function handleClick() {
         setIsOpen(!isOpen);
     }
+
+    useEffect(() => {
+        function handleClickOutside(event) {
+            if (menuRef.current && !menuRef.current.contains(event.target) && !event.target.className.includes("menu-button")) {
+                setIsOpen(false);
+            }
+        }
+
+        document.addEventListener('click', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('click', handleClickOutside);
+        };
+    }, [menuRef])
 
     return (
         <header
@@ -58,10 +72,10 @@ export default function NavBar() {
             dark:text-colors-light relative z-10 lg:px-16 md:px-12 sm:px-8
             "
         >
-            <button className=" flex-col justify-center items-center hidden lg:flex" onClick={handleClick}>
-                <span className={`bg-colors-dark dark:bg-colors-light transition-all duration-300 ease-out block h-0.5 w-6 rounded-sm  ${isOpen ? "rotate-45 translate-y-1" : "-translate-y-0.5"}`}></span>
-                <span className={`bg-colors-dark dark:bg-colors-light transition-all duration-300 ease-out block h-0.5 w-6 rounded-sm my-0.5 ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-                <span className={`bg-colors-dark dark:bg-colors-light transition-all duration-300 ease-out block h-0.5 w-6 rounded-sm  ${isOpen ? "-rotate-45 -translate-y-1" : "translate-y-0.5"}`}></span>
+            <button className=" flex-col justify-center items-center hidden lg:flex menu-button" onClick={handleClick}>
+                <span className={`bg-colors-dark dark:bg-colors-light transition-all duration-300 ease-out block h-0.5 w-6 rounded-sm menu-button  ${isOpen ? "rotate-45 translate-y-1" : "-translate-y-0.5"}`}></span>
+                <span className={`bg-colors-dark dark:bg-colors-light transition-all duration-300 ease-out block h-0.5 w-6 rounded-sm my-0.5 menu-button ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+                <span className={`bg-colors-dark dark:bg-colors-light transition-all duration-300 ease-out block h-0.5 w-6 rounded-sm menu-button  ${isOpen ? "-rotate-45 -translate-y-1" : "translate-y-0.5"}`}></span>
             </button>
 
             <div className="w-full flex justify-between items-center lg:hidden">
@@ -77,7 +91,7 @@ export default function NavBar() {
                     <motion.a href="https://github.com/joaovcordeiro" target={"_blank"} whileHover={{ y: -2 }} whileTap={{ scale: 0.9 }} className="w-6 mx-3"><GithubIcon /></motion.a>
                     <motion.a href="https://www.linkedin.com/in/joaoaraujocordeiro/" target={"_blank"} whileHover={{ y: -2 }} whileTap={{ scale: 0.9 }} className="w-6 mx-3"><LinkedInIcon /></motion.a>
                     <button onClick={() => setMode(mode === "light" ? "dark" : "light")}
-                        className={`ml-3 flex items-center justify-center rounded-full p-1
+                        className={`ml-3 flex items-center justify-center rounded-full p-1 
                     ${mode === "light" ? "bg-colors-dark text-colors-light" : "bg-colors-light text-colors-dark"}
 
                     `}
@@ -92,7 +106,7 @@ export default function NavBar() {
             {
                 isOpen ?
 
-                    <motion.div
+                    <motion.div ref={menuRef}
                         initial={{ scale: 0, opacity: 0, x: "-50%", y: "-50%" }}
                         animate={{ scale: 1, opacity: 1 }}
                         className="min-w-[70vw] flex flex-col justify-between items-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30

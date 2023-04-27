@@ -5,7 +5,7 @@ import picture from "../../public/images/profile/wolf.png"
 import bulbPicture from "../../public/images/profile/bulb.png"
 import AnimatedText from '@/components/AnimatedText'
 import Link from 'next/link'
-import { BulbIcon, LinkArrow } from '@/components/Icons'
+import { LinkArrow } from '@/components/Icons'
 import HireMe from '@/components/HireMe'
 import TransitionEffect from '@/components/TransitionEffect'
 

@@ -38,7 +38,6 @@ export default function Education
 
     return <div className='flex-col my-24 w-full flex items-center '>
         <h2 className="mb-16 text-4xl font-bold uppercase text-colors-dark/75 text-center dark:text-colors-light/75
-            md:text-6xl xs:text-4xl md:mb-16
         ">Educação</h2>
 
         <div ref={ref} className="w-[75%] mx-auto relative lg:w-[90%] m:w-full">
