@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 
 
 export default function SkillItem({ title, icon }) {
-    const cloneIcon = React.cloneElement(icon, { className: 'h-20 w-20 sm:w-7 sm:h-7 cursor-pointer ' })
+    const cloneIcon = React.cloneElement(icon, { className: 'h-20 w-20 sm:w-2/3  cursor-pointer ' })
 
     return <motion.div
-        className="flex flex-col gap-1 justify-center items-center text-colors-dark dark:text-colors-light dark:hover:text-blue-400 hover:text-blue-700
+        className="flex sm:w-1/3 flex-col gap-1 sm:gap-0 justify-center items-center text-colors-dark dark:text-colors-light dark:hover:text-blue-400 hover:text-blue-700
             
         " title={title} whileHover={{ y: -4, scale: 1.1 }} >
         {cloneIcon}
