@@ -19,9 +19,9 @@ export default function Home() {
       </Head>
       <TransitionEffect />
       <main className='flex items-center text-colors-dark dark:text-colors-light w-full min-h-screen'>
-        <Layout className='pt-0 md:p-16 sm:pt-8'>
+        <Layout className='pt-0 md:p-16 sm:p-4 sm:pt-0'>
           <div className='flex items-center justify-between w-full lg:flex-col'>
-            <div className='w-1/2 md:w-full'>
+            <div className='w-1/2 md:w-full pl-4 '>
               <Image src={picture} alt="Wolf picture" className='w-full h-auto md:mb-6 md:inline-block ' priority sizes='(max-width: 760px) 100vw, (max-width: 1200px) 50vw, 50vw ' />
             </div>
             <div className='w-1/2 flex flex-col items-center self-center lg:w-full lg:text-center'>
