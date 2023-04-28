@@ -17,7 +17,7 @@ export default function Home() {
         <title>João Araujo</title>
         <meta name="description" content="Paginal inicial" />
       </Head>
-      <TransitionEffect />
+      {/* <TransitionEffect /> */}
       <main className='flex items-center text-colors-dark dark:text-colors-light w-full min-h-screen'>
         <Layout className='pt-0 md:p-16 sm:p-8 sm:pt-0'>
           <div className='flex items-center justify-between w-full lg:flex-col'>
