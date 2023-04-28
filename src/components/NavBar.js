@@ -72,7 +72,7 @@ export default function NavBar() {
             dark:text-colors-light relative z-10 lg:px-16 md:px-12 sm:px-8
             "
         >
-            <button className="flex-col justify-center items-center hidden lg:flex menu-button sm:" onClick={handleClick}>
+            <button className="flex-col justify-center items-center hidden lg:flex menu-button sm:" aria-label="Botão de menu flutuante" onClick={handleClick}>
                 <span className={`bg-colors-dark dark:bg-colors-light transition-all duration-300 ease-out block h-0.5 w-6 rounded-sm menu-button  ${isOpen ? "rotate-45 translate-y-1" : "-translate-y-0.5"}`}></span>
                 <span className={`bg-colors-dark dark:bg-colors-light transition-all duration-300 ease-out block h-0.5 w-6 rounded-sm my-0.5 menu-button ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
                 <span className={`bg-colors-dark dark:bg-colors-light transition-all duration-300 ease-out block h-0.5 w-6 rounded-sm menu-button  ${isOpen ? "-rotate-45 -translate-y-1" : "translate-y-0.5"}`}></span>
