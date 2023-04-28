@@ -14,8 +14,8 @@ export default function Footer() {
                     <span>Desenvolvido por<Link className="underline underline-offset-2" href="https://www.linkedin.com/in/joaoaraujocordeiro/" target={"_blank"}> João Araujo</Link></span>
                 </div>
                 <div className="flex  ">
-                    <motion.a href="https://github.com/joaovcordeiro" target={"_blank"} whileHover={{ y: -2 }} whileTap={{ scale: 0.9 }} className="w-6 mx-3"><GithubIcon /></motion.a>
-                    <motion.a href="https://www.linkedin.com/in/joaoaraujocordeiro/" target={"_blank"} whileHover={{ y: -2 }} whileTap={{ scale: 0.9 }} className="w-6 mx-3"><LinkedInIcon /></motion.a>
+                    <motion.a href="https://github.com/joaovcordeiro" aria-label="Link para o Github pessoal." target={"_blank"} whileHover={{ y: -2 }} whileTap={{ scale: 0.9 }} className="w-6 mx-3"><GithubIcon /></motion.a>
+                    <motion.a href="https://www.linkedin.com/in/joaoaraujocordeiro/" aria-label="Link para o Linkedin pessoal." target={"_blank"} whileHover={{ y: -2 }} whileTap={{ scale: 0.9 }} className="w-6 mx-3"><LinkedInIcon /></motion.a>
 
                 </div>
 

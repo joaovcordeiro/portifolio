@@ -88,8 +88,8 @@ export default function NavBar() {
                 </nav>
 
                 <nav className="flex items-center justify-center ">
-                    <motion.a href="https://github.com/joaovcordeiro" target={"_blank"} whileHover={{ y: -2 }} whileTap={{ scale: 0.9 }} className="w-6 mx-3"><GithubIcon /></motion.a>
-                    <motion.a href="https://www.linkedin.com/in/joaoaraujocordeiro/" target={"_blank"} whileHover={{ y: -2 }} whileTap={{ scale: 0.9 }} className="w-6 mx-3"><LinkedInIcon /></motion.a>
+                    <motion.a href="https://github.com/joaovcordeiro" aria-label="Link para o Github pessoal." target={"_blank"} whileHover={{ y: -2 }} whileTap={{ scale: 0.9 }} className="w-6 mx-3"><GithubIcon /></motion.a>
+                    <motion.a href="https://www.linkedin.com/in/joaoaraujocordeiro/" aria-label="Link para o Linkedin pessoal." target={"_blank"} whileHover={{ y: -2 }} whileTap={{ scale: 0.9 }} className="w-6 mx-3"><LinkedInIcon /></motion.a>
                     <button onClick={() => setMode(mode === "light" ? "dark" : "light")}
                         className={`ml-3 flex items-center justify-center rounded-full p-1 
                     ${mode === "light" ? "bg-colors-dark text-colors-light" : "bg-colors-light text-colors-dark"}
