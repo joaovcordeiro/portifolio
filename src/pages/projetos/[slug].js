@@ -22,7 +22,7 @@ export default function Projeto({ projeto }) {
             </Head>
             <TransitionEffect />
 
-            <Layout>
+            <Layout className='pt-16 sm:p-8'>
                 <div className=" mx-auto my-8 ">
                     <Image
                         src={projeto.imagem.url}
