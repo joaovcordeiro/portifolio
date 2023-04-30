@@ -10,7 +10,6 @@ import { request } from '@/lib/datocms'
 import { useRouter } from "next/router"
 import formatDate from "@/utils/formatDate"
 
-const FramerImage = motion(Image)
 
 const Project = (projeto) => {
     const router = useRouter()
@@ -19,7 +18,7 @@ const Project = (projeto) => {
         router.push(`/projetos/${slug}`)
     }
     return (
-        <article className="m-4 p-4 col-span-6 md:col-span-12 cursor-pointer" onClick={() => handleProjectClick(projeto.slug)}>
+        <article className="m-4 p-0 col-span-6 md:col-span-12 cursor-pointer" onClick={() => handleProjectClick(projeto.slug)}>
             <div className="h-full border-none rounded-sm overflow-hidden bg-white hover:bg-gray-200 transition duration-300 ease-in-out transform hover:scale-105">
                 <Image src={projeto.imagem.url} width={projeto.imagem.width} height={projeto.imagem.height} className="lg:h-72 md:h-48 w-full object-cover object-center" />
                 <div className="p-6 ">
@@ -46,9 +45,9 @@ export default function Projetos({ data }) {
             </Head>
             <TransitionEffect />
 
-            <Layout className="pt-16">
+            <Layout className="pt-16 sm:p-6">
                 <main className="w-full mb-16 flex flex-col items-center justify-center dark:bg-colors-dark dark:text-colors-light" >
-                    <AnimatedText text="Criatividade e Ciencia Aplicados ao Desenvolvimento de Software!" className="mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl !text-6xl" />
+                    <AnimatedText text="Criatividade e Ciencia Aplicados ao Desenvolvimento de Software!" className="mb-16 lg:!text-7xl sm:mb-8 sm:!text-5xl xs:!text-4xl !text-6xl" />
 
                     <div className="grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0 ">
                         {data.allProjetos.map((projeto, index) => {
