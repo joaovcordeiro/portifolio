@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function Footer() {
     return (
-        <footer className="w-full border-t-[1px] border-solid border-colors-light font-medium text-sm bg-colors-dark text-colors-light md:text-xs sm:text-[10px]">
+        <footer className="w-full  border-t-[1px] border-solid border-colors-light font-medium text-sm bg-colors-dark text-colors-light md:text-xs sm:text-[10px]">
             <Layout className="py-8 sm:py-4 flex items-center justify-between !bg-colors-dark lg:py-6">
                 <div className="flex gap-2 md:flex-col md:flex-col-reverse">
                     <span >{new Date().getFullYear()} &copy; Todos os Direitos Reservados</span>

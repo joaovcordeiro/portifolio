@@ -38,12 +38,10 @@ export default function Home() {
                   download={true}
                 >Curriculo <LinkArrow className="w-6 ml-1" />
                 </Link>
-                {/* <Link href="mailto:jjvictorac@gmail.com" target={"_blank"} className='ml-4 text-lg font-medium capitalize text-colors-dark underline dark:text-colors-light md:text-base'>Contato</Link> */}
               </div>
             </div>
             <Image src={bulbPicture} alt='LightBulb picture' className='w-1/6 absolute right-0 bottom-0 md:bottom-4' />
           </div>
-          {/* <BulbIcon className="dark:fill-colors-light absolute right-8 bottom-4 inline-block lg:w-32 md:hidden" title='Designed by rawpixel.com / Freepik' alt="Light Bulb" /> */}
         </Layout>
         <HireMe />
       </main >

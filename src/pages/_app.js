@@ -30,8 +30,8 @@ export default function App({ Component, pageProps }) {
           <Component key={router.asPath} {...pageProps} />
           <Analytics />
         </AnimatePresence>
-        <Footer />
       </main>
+      <Footer />
     </>
   )
 }
