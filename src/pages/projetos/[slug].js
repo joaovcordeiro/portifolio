@@ -106,6 +106,7 @@ export async function getStaticProps({ params }) {
     });
 
     return {
-        props: { projeto: data.projeto }
+        props: { projeto: data.projeto },
+        revalidate: 60
     }
 }
