@@ -5,9 +5,15 @@ import Head from 'next/head';
 import Image from 'next/image';
 import formatDate from '@/utils/formatDate';
 import Link from 'next/link';
+import { GithubIcon } from '@/components/Icons';
+import { AiOutlineArrowRight } from 'react-icons/ai';
+import { motion } from 'framer-motion';
+
+const FramerLink = motion(Link);
 
 
 export default function Projeto({ projeto }) {
+    console.log();
     return (
         <>
             <Head>
@@ -17,13 +23,35 @@ export default function Projeto({ projeto }) {
             <TransitionEffect />
 
             <Layout>
-                <div>
-                    <Image src={projeto.imagem.url} className='w-full h-full object-cover' alt={projeto.nome} width={projeto.imagem.width} height={projeto.imagem.height} />
-                    <h1>{projeto.nome}</h1>
-                    <p>{formatDate(projeto.data)}</p>
-                    <Link href={projeto.link} target='_blank'>Ver Projeto</Link>
-                    <Link href={projeto.github} target='_blank'>Github</Link>
-
+                <div className=" mx-auto my-8 ">
+                    <Image
+                        src={projeto.imagem.url}
+                        alt={projeto.nome}
+                        width={projeto.imagem.width}
+                        height={projeto.imagem.height}
+                        className="rounded-lg"
+                    />
+                    <div className="w-full mt-4 flex justify-between">
+                        <div>
+                            <p className="mt-2 text-colors-primary/75">{formatDate(projeto.data)}</p>
+                            <h1 className="text-2xl font-bold dark:text-colors-light">{projeto.nome}</h1>
+                        </div>
+                        <div className="flex space-x-4 align-middle">
+                            <Link href={projeto.link} target="_blank" className=" py-2 px-4 h-2/3 bg-colors-primary text-white rounded hover:bg-blue-600 transition duration-200">
+                                Ver Projeto
+                            </Link>
+                            <motion.div whileHover={{ scale: 1.1, y: -2 }}>
+                                <Link href={projeto.github} target="_blank"  >
+                                    <GithubIcon className="w-[3rem] text-gray-700  dark:text-colors-light  transition duration-200" />
+                                </Link>
+                            </motion.div>
+                        </div>
+                    </div>
+                    <div>
+                        {projeto.texto.value.document.children.map((child, index) => (
+                            <p key={index} className="mt-4 text-lg text-colors-dark dark:text-colors-light/80">{child.children[0].value}</p>
+                        ))}
+                    </div>
                 </div>
             </Layout>
         </>
