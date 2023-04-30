@@ -8,9 +8,12 @@ import Link from 'next/link'
 import { LinkArrow } from '@/components/Icons'
 import HireMe from '@/components/HireMe'
 import TransitionEffect from '@/components/TransitionEffect'
+import { request } from '@/lib/datocms'
 
 
-export default function Home() {
+
+export default function Home({ data }) {
+  console.log(data.curriculo.documento.url)
   return (
     <>
       <Head>
@@ -28,7 +31,7 @@ export default function Home() {
               <AnimatedText text="Tornando Inspirações Em Realidade Com Código." className='!text-6xl !text-left xl:!text-5xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl' />
               <p className='my-4 text-base font-medium md:text-sm sm:text-xs'>Como um desenvolvedor full-stack, Sou dedicado a transformar ideias em aplicações. Explore meus ultimos projetos, apresentando meus conhecimentos em programação. </p>
               <div className='flex items-center self-start mt-2 lg:self-center'>
-                <Link href="/CVcar.pdf" target={"_blank"}
+                <Link href={data.curriculo.documento.url} target={"_blank"}
                   className='flex items-center bg-colors-dark text-colors-light p-2.5 px-6 rounded-lg text-lg font-semibold
                 hover:bg-colors-light hover:text-colors-dark 
                   border-2 border-solid border-transparent hover:border-colors-dark
@@ -48,4 +51,26 @@ export default function Home() {
 
     </>
   )
+}
+
+export async function getStaticProps() {
+  const contentQuery = `query {
+    curriculo {
+      id
+      documento {
+        url
+      }
+    }
+  }`
+
+  const data = await request({
+    query: contentQuery,
+    variables: { limit: 10 }
+  })
+
+  return {
+    props: {
+      data
+    }
+  }
 }
