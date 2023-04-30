@@ -46,8 +46,8 @@ export default function Projetos({ data }) {
             </Head>
             <TransitionEffect />
 
-            <main className="w-full mb-16 flex flex-col items-center justify-center dark:bg-colors-dark dark:text-colors-light" >
-                <Layout className="pt-16">
+            <Layout className="pt-16">
+                <main className="w-full mb-16 flex flex-col items-center justify-center dark:bg-colors-dark dark:text-colors-light" >
                     <AnimatedText text="Criatividade e Ciencia Aplicados ao Desenvolvimento de Software!" className="mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl !text-6xl" />
 
                     <div className="grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0 ">
@@ -58,8 +58,8 @@ export default function Projetos({ data }) {
                         })}
                     </div>
 
-                </Layout>
-            </main>
+                </main>
+            </Layout>
         </>
     )
 }
