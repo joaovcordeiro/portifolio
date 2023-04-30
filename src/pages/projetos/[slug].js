@@ -36,13 +36,13 @@ export default function Projeto({ projeto }) {
                             <p className="mt-2 text-colors-primary/75">{formatDate(projeto.data)}</p>
                             <h1 className="text-2xl font-bold dark:text-colors-light">{projeto.nome}</h1>
                         </div>
-                        <div className="flex space-x-4 align-middle">
-                            <Link href={projeto.link} target="_blank" className=" py-2 px-4 h-2/3 bg-colors-primary text-white rounded hover:bg-blue-600 transition duration-200">
+                        <div className="flex space-x-4 mt-2 align-middle md:flex-col md:gap-2 ">
+                            <Link href={projeto.link} target="_blank" className="sm:text-sm sm:px-2 sm:h-1/3 sm:py-0 py-2 px-4 h-2/3 bg-colors-primary text-white rounded hover:bg-blue-600 transition duration-200">
                                 Ver Projeto
                             </Link>
-                            <motion.div whileHover={{ scale: 1.1, y: -2 }}>
+                            <motion.div whileHover={{ scale: 1.1, y: -2 }} className='md:w-[2rem] w-[3rem]'>
                                 <Link href={projeto.github} target="_blank"  >
-                                    <GithubIcon className="w-[3rem] text-gray-700  dark:text-colors-light  transition duration-200" />
+                                    <GithubIcon className=" text-gray-700 w-full dark:text-colors-light  transition duration-200" />
                                 </Link>
                             </motion.div>
                         </div>
