@@ -6,10 +6,7 @@ import Image from 'next/image';
 import formatDate from '@/utils/formatDate';
 import Link from 'next/link';
 import { GithubIcon } from '@/components/Icons';
-import { AiOutlineArrowRight } from 'react-icons/ai';
 import { motion } from 'framer-motion';
-
-const FramerLink = motion(Link);
 
 
 export default function Projeto({ projeto }) {
@@ -24,13 +21,15 @@ export default function Projeto({ projeto }) {
 
             <Layout className='pt-16 sm:p-8'>
                 <div className=" mx-auto my-8 ">
-                    <Image
-                        src={projeto.imagem.url}
-                        alt={projeto.nome}
-                        width={projeto.imagem.width}
-                        height={projeto.imagem.height}
-                        className="rounded-lg"
-                    />
+                    <Link href={projeto.link} target='_blank' className='w-auto h-auto cursor-pointer'>
+                        <Image
+                            src={projeto.imagem.url}
+                            alt={projeto.nome}
+                            width={projeto.imagem.width}
+                            height={projeto.imagem.height}
+                            className="rounded-lg"
+                        />
+                    </Link>
                     <div className="w-full mt-4 flex justify-between">
                         <div>
                             <p className="mt-2 text-colors-primary/75">{formatDate(projeto.data)}</p>

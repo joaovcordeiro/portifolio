@@ -18,15 +18,18 @@ const Project = (projeto) => {
         router.push(`/projetos/${slug}`)
     }
     return (
-        <article className="m-4 p-0 col-span-6 md:col-span-12 cursor-pointer" onClick={() => handleProjectClick(projeto.slug)}>
-            <div className="h-full border-none rounded-sm overflow-hidden bg-white hover:bg-gray-200 transition duration-300 ease-in-out transform hover:scale-105">
-                <Image src={projeto.imagem.url} width={projeto.imagem.width} height={projeto.imagem.height} className="lg:h-72 md:h-48 w-full object-cover object-center" />
-                <div className="p-6 ">
-                    <h2 className="text-xs font-normal text-colors-primary/60 mb-1 hover:text-gray-700">{formatDate(projeto.data)}</h2>
-                    <h1 className="text-xl dark:text-colors-dark/80 mb-3 sm:text-sm">{projeto.nome}</h1>
+        <Link href={`/projetos/${projeto.slug}`} className="m-4 p-0 col-span-6 md:col-span-12 cursor-pointer">
+            <article  >
+                <div className="h-full border-none rounded-sm overflow-hidden bg-white hover:bg-gray-200 transition duration-300 ease-in-out transform hover:scale-105">
+                    <Image src={projeto.imagem.url} width={projeto.imagem.width} height={projeto.imagem.height} className="lg:h-72 md:h-48 w-full object-cover object-center" />
+                    <div className="p-6 ">
+                        <h2 className="text-xs font-normal text-colors-primary/60 mb-1 hover:text-gray-700">{formatDate(projeto.data)}</h2>
+                        <h1 className="text-xl dark:text-colors-dark/80 mb-3 sm:text-sm">{projeto.nome}</h1>
+                    </div>
                 </div>
-            </div>
-        </article>
+            </article>
+        </Link>
+
     )
 }
 

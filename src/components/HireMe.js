@@ -1,8 +1,7 @@
 import { CircularText, WhatsappIcon } from "./Icons";
 import Link from "next/link";
 
-export default function HireMe() {
-    const number = process.env.NEXT_WHAT_NUMBER;
+export default function HireMe({ number }) {
     return (<div className="fixed left-4 bottom-4 flex items-center justify-center overflow-hidden z-10 
         md:right-8 md:left-auto md:top-[-60px] md:absolute md:bottom-auto sm:right-0
     " >

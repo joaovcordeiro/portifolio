@@ -12,8 +12,7 @@ import { request } from '@/lib/datocms'
 
 
 
-export default function Home({ data }) {
-  console.log(data.curriculo.documento.url)
+export default function Home({ data, NEXT_WHAT_NUMBER }) {
   return (
     <>
       <Head>
@@ -46,7 +45,7 @@ export default function Home({ data }) {
             <Image src={bulbPicture} alt='LightBulb picture' className='w-1/6 absolute right-0 bottom-0 md:bottom-4' />
           </div>
         </Layout>
-        <HireMe />
+        <HireMe number={NEXT_WHAT_NUMBER} />
       </main >
 
     </>
@@ -54,6 +53,8 @@ export default function Home({ data }) {
 }
 
 export async function getStaticProps() {
+  const { NEXT_WHAT_NUMBER } = process.env
+
   const contentQuery = `query {
     curriculo {
       id
@@ -70,7 +71,8 @@ export async function getStaticProps() {
 
   return {
     props: {
-      data
+      data,
+      NEXT_WHAT_NUMBER
     }
   }
 }
