@@ -7,6 +7,7 @@ import { AnimatePresence } from 'framer-motion'
 import { useRouter } from 'next/router'
 import { Analytics } from "@vercel/analytics/react"
 import { Toaster } from 'react-hot-toast'
+import { DefaultSeo } from 'next-seo'
 
 const monstserrat = Montserrat({ subsets: ['latin'], variable: '--font-mont' })
 
@@ -15,6 +16,24 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
+      <DefaultSeo
+        title="João Araujo"
+        description="Pagina inicial"
+        openGraph={{
+          type: 'website',
+          locale: 'pt_BR',
+          url: 'https://jvaraujo.com.br',
+          site_name: 'João Araujo',
+          images: [
+            {
+              url: 'https://jvaraujo.com.br/images/profile/wolf.png',
+              width: 800,
+              height: 600,
+              alt: 'Wolf picture',
+            },
+          ],
+        }}
+      />
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />

@@ -13,6 +13,16 @@ export default function Sobre() {
             <Head>
                 <title>João Araujo | Sobre</title>
                 <meta name="descrição" content="Descrição pessoal" />
+                <meta name="description" content="Sobre" />
+                <meta property="og:title" content="João Araujo | Sobre" />
+                <meta
+                    property="og:description"
+                    content="Pagina de descrição pessoal"
+                />
+                <meta
+                    property="og:image"
+                    content="https://www.jvaraujo.com.br/pagina_sobre.png"
+                />
             </Head>
             <TransitionEffect />
 

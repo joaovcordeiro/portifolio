@@ -74,6 +74,18 @@ export default function Contato() {
         <Head>
             <title>João Araujo | Contato</title>
             <meta name="descrição" content="Formulario de Contato" />
+            <title>João Araujo | Sobre</title>
+            <meta name="descrição" content="Contato" />
+            <meta name="description" content="Contato" />
+            <meta property="og:title" content="João Araujo | Contato" />
+            <meta
+                property="og:description"
+                content="Pagina de Contato"
+            />
+            <meta
+                property="og:image"
+                content="https://www.jvaraujo.com.br/pagina_contato.png"
+            />
         </Head>
         <TransitionEffect />
         <Layout className="pt-16 sm:p-8">
