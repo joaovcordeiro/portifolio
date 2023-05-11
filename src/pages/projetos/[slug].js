@@ -10,7 +10,6 @@ import { motion } from 'framer-motion';
 
 
 export default function Projeto({ projeto }) {
-    console.log();
     return (
         <>
             <Head>
@@ -35,7 +34,7 @@ export default function Projeto({ projeto }) {
                             <p className="mt-2 text-colors-primary/75">{formatDate(projeto.data)}</p>
                             <h1 className="text-2xl font-bold dark:text-colors-light">{projeto.nome}</h1>
                         </div>
-                        <div className="flex space-x-4 mt-2 align-middle md:flex-col md:gap-2 ">
+                        <div className="flex  mt-2 md:mt-2 align-middle md:gap-2 ">
                             <Link href={projeto.link} target="_blank" className="sm:text-sm sm:px-2 sm:h-1/3 sm:py-0 py-2 px-4 h-2/3 bg-colors-primary text-white rounded hover:bg-blue-600 transition duration-200">
                                 Ver Projeto
                             </Link>
@@ -45,6 +44,15 @@ export default function Projeto({ projeto }) {
                                 </Link>
                             </motion.div>
                         </div>
+                    </div>
+                    <div className="flex gap-4 py-2">
+                        {projeto.categoria.map((categoria, index) => {
+                            return (
+                                <div key={categoria.nome} className="bg-colors-dark rounded-full md:px-1 md:py-[0.15rem] px-2 py-1 shadow-md text-colors-light hover:text-colors-dark hover:bg-colors-light/80  transition-colors duration-300">
+                                    <p className="text-xs md:text-[0.5rem] text-center font-bold  ">#{categoria.nome}</p>
+                                </div>
+                            )
+                        })}
                     </div>
                     <div>
                         {projeto.texto.value.document.children.map((child, index) => (
@@ -95,6 +103,10 @@ export async function getStaticProps({ params }) {
           texto {
             value
           }
+          categoria {
+            nome
+          }
+         
         }
       }
     `;
