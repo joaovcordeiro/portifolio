@@ -45,7 +45,7 @@ export default function Projeto({ projeto }) {
                             </motion.div>
                         </div>
                     </div>
-                    <div className="flex gap-4 py-2">
+                    <div className="flex gap-4 py-2 flex-wrap">
                         {projeto.categoria.map((categoria, index) => {
                             return (
                                 <div key={categoria.nome} className="bg-colors-dark rounded-full md:px-1 md:py-[0.15rem] px-2 py-1 shadow-md text-colors-light hover:text-colors-dark hover:bg-colors-light/80  transition-colors duration-300">
