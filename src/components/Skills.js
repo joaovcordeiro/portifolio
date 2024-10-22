@@ -1,14 +1,15 @@
 
-import { TbBrandNextjs } from "react-icons/tb";
-import { SiJest, SiPostgresql, SiNginx, SiMongodb, SiPython, SiJavascript, SiHtml5, SiCss3, SiReact, SiNodedotjs, SiDocker, SiTailwindcss } from "react-icons/si";
+import {SiPowerbi ,  SiPython, SiJavascript, SiDocker, SiDbt, SiGooglecloud, SiPostgresql, SiApachespark, SiAirbyte, SiTerraform, SiDatabricks} from "react-icons/si";
+import { FaAws } from "react-icons/fa";
+import { TbSql } from "react-icons/tb";
 
 import SkillItem from './SkillsItem';
 
 
-const skills = [{ icon: <SiReact />, name: "React" }, { icon: <SiHtml5 />, name: "HTML" }, { icon: <SiCss3 />, name: "CSS" }, { icon: <SiTailwindcss />, name: "Tailwind" },
-{ icon: <SiJavascript />, name: "JavaScript" }, { icon: <SiPython />, name: "Python" }, { icon: <TbBrandNextjs />, name: "NextJS" }, { icon: <SiNodedotjs />, name: "NodeJS" },
-{ icon: <SiDocker />, name: "Docker" }, { icon: <SiJest />, name: "Jest" }, { icon: <SiPostgresql />, name: "Postgres" }, { icon: <SiMongodb />, name: "MongoDB" },
-{ icon: <SiNginx />, name: "Nginx" }];
+const skills = [
+{ icon: <SiJavascript />, name: "JavaScript" }, { icon: <SiPython />, name: "Python" }, {icon: <TbSql />, name: "SQL"}, {icon: <SiDbt />, name: "DBT"},
+{ icon: <SiDocker />, name: "Docker" }, { icon: <SiApachespark />, name: "Spark" }, { icon: <SiAirbyte />, name: "Airbyte" }, { icon: <SiTerraform />, name: "Terraform" }, { icon: <SiDatabricks />, name: "DataBricks" },
+ { icon: <SiPowerbi />, name: "PowerBI" }, { icon: <FaAws />, name: "AWS" }, { icon: <SiGooglecloud />, name: "GCP" }, { icon: <SiPostgresql />, name: "Postgres" }];
 
 export default function Skills
     () {
