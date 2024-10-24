@@ -1,12 +1,10 @@
 import Layout from '@/components/Layout'
 import Head from 'next/head'
 import Image from 'next/image'
-import picture from "../../public/images/profile/wolf.png"
 import bulbPicture from "../../public/images/profile/bulb.png"
 import AnimatedText from '@/components/AnimatedText'
 import Link from 'next/link'
 import { LinkArrow } from '@/components/Icons'
-import HireMe from '@/components/HireMe'
 import TransitionEffect from '@/components/TransitionEffect'
 import { request } from '@/lib/datocms'
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
