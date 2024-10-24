@@ -123,7 +123,7 @@ export default function Contato() {
             <Head>
                 <title>João Araujo | Contato</title>
                 <meta name="descrição" content="Formulario de Contato" />
-                <title>João Araujo | Sobre</title>
+                <title>João Araujo | Contato</title>
                 <meta name="descrição" content="Contato" />
                 <meta name="description" content="Contato" />
                 <meta property="og:title" content="João Araujo | Contato" />
