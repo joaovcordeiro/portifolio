@@ -14,10 +14,6 @@ export const sendContactMail = async (name, senderMail, content) => {
     }
 
     try {
-        console.log('SERVICE_ID:', process.env.NEXT_PUBLIC_SERVICE_ID);
-        console.log('TEMPLATE_ID:', process.env.NEXT_PUBLIC_TEMPLATE_ID);
-        console.log('PUBLIC_KEY:', process.env.NEXT_PUBLIC_PUBLIC_KEY);
-
         emailjs.send(service_id, template_id, templateParams, public_key)
     }
     catch (error) {
