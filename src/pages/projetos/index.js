@@ -45,7 +45,7 @@ export default function Projetos({ data, categories, count }) {
 
             <Layout className="pt-16 sm:p-6  flex flex-col items-center ">
                 <main className="w-full mb-16 flex flex-col items-center justify-center dark:bg-colors-dark dark:text-colors-light" >
-                    <AnimatedText text="Criatividade e Ciência Aplicadas ao Desenvolvimento de Software!" className="mb-16 lg:!text-5xl sm:mb-8 sm:!text-5xl xs:!text-4xl !text-6xl" />
+                    <AnimatedText text="Desenvolvendo Sistemas que Transformam Dados em Decisões" className="mb-16 lg:!text-5xl sm:mb-8 sm:!text-5xl xs:!text-4xl !text-6xl" />
                     {/* <CategoryFilter filter={filter} setFilter={setFilter} categories={categories} /> */}
                     <div className="grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0 ">
                         <AnimatePresence onExitComplete={() => setProjetos(data.allProjetos.slice((page - 1) * limit, page * limit))}>

@@ -9,6 +9,7 @@ import { LinkArrow } from '@/components/Icons'
 import HireMe from '@/components/HireMe'
 import TransitionEffect from '@/components/TransitionEffect'
 import { request } from '@/lib/datocms'
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 
 
@@ -42,7 +43,13 @@ export default function Home({ data, NEXT_WHAT_NUMBER }) {
         <Layout className='pt-0 md:p-16 sm:p-8 sm:pt-0'>
           <div className='flex items-center justify-between w-full lg:flex-col'>
             <div className='w-1/2 md:w-full pl-4 '>
-              <Image src={picture} alt="Wolf picture" className='w-full h-auto md:mb-6 md:inline-block ' priority sizes='(max-width: 760px) 100vw, (max-width: 1200px) 50vw, 50vw ' />
+              {/* <Image src={picture} alt="Wolf picture" className='w-full h-auto md:mb-6 md:inline-block ' priority sizes='(max-width: 760px) 100vw, (max-width: 1200px) 50vw, 50vw ' /> */}
+              <DotLottieReact
+                src="https://lottie.host/1632e66f-38bc-4be4-9264-6c37607b5bcb/ymcSdu5j0L.json"
+                loop
+                autoplay
+                className='w-full h-auto md:mb-6 md:inline-block ' priority sizes='(max-width: 760px) 100vw, (max-width: 1200px) 50vw, 50vw '
+              />
             </div>
             <div className='w-1/2 flex flex-col items-center self-center lg:w-full lg:text-center '>
               <AnimatedText text="Construindo Pontes Entre Dados e Negócios." className='!text-6xl !text-left xl:!text-5xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl' />

@@ -39,7 +39,7 @@ export default function Sobre() {
                         <Image 
                             src={picture} 
                             alt="Wolf picture" 
-                            className='w-32 h-32 md:w-48 md:h-48 rounded-full object-cover md:mb-6' 
+                            className='w-48 h-48 md:w-48 md:h-48 rounded-full object-cover md:mb-6' 
                             priority 
                             sizes='(max-width: 760px) 100vw, (max-width: 1200px) 50vw, 50vw' 
                         />
