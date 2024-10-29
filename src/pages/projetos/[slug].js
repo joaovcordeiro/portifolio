@@ -99,7 +99,8 @@ export default function Projeto({ projeto }) {
                     {/* Conteúdo Principal */}
                     <div className="w-3/4 sm:w-full">
                         <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg">
-                            <Link href={projeto.link} target="_blank" className="block w-full h-auto cursor-pointer">
+                        {projeto.link ? (
+                            <Link href={projeto.link} target="_blank" rel="noopener noreferrer" className="block w-full h-auto cursor-pointer">
                                 <Image
                                     src={projeto.imagem.url}
                                     alt={projeto.nome}
@@ -108,6 +109,15 @@ export default function Projeto({ projeto }) {
                                     className="rounded-lg object-cover"
                                 />
                             </Link>
+                        ) : (
+                            <Image
+                                src={projeto.imagem.url}
+                                alt={projeto.nome}
+                                width={projeto.imagem.width}
+                                height={projeto.imagem.height}
+                                className="rounded-lg object-cover"
+                            />
+                        )}
 
                             <div className="w-full mt-6 flex justify-between items-center">
                                 <div>
