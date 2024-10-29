@@ -43,22 +43,23 @@ export default function Projetos({ data, categories, count }) {
             </Head>
             <TransitionEffect />
 
-            <Layout className="pt-16 sm:p-6  flex flex-col items-center ">
-                <main className="w-full mb-16 flex flex-col items-center justify-center dark:bg-colors-dark dark:text-colors-light" >
-                    <AnimatedText text="Desenvolvendo Sistemas que Transformam Dados em Decisões" className="mb-16 lg:!text-5xl sm:mb-8 sm:!text-5xl xs:!text-4xl !text-6xl" />
-                    {/* <CategoryFilter filter={filter} setFilter={setFilter} categories={categories} /> */}
-                    <div className="grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0 ">
-                        <AnimatePresence onExitComplete={() => setProjetos(data.allProjetos.slice((page - 1) * limit, page * limit))}>
-                            {projetos.map((projeto, index) => {
-                                return (
-                                    <Project key={index} projeto={projeto} />
-                                )
-                            })}
-                        </AnimatePresence>
-                    </div>
-                </main>
-                <Pagination count={count._allProjetosMeta.count} setPage={setPage} page={page} />
-            </Layout>
+            <Layout className="pt-16 sm:p-6 flex flex-col items-center">
+            <main className="w-full mb-16 flex flex-col items-center justify-center dark:bg-colors-dark dark:text-colors-light">
+                <AnimatedText 
+                    text="Desenvolvendo Sistemas que Transformam Dados em Decisões" 
+                    className="mb-16 lg:!text-5xl sm:mb-8 sm:!text-5xl xs:!text-4xl !text-6xl" 
+                />
+                {/* Grid de Projetos com 3 Colunas Responsivas */}
+                <div className="grid grid-cols-3 sm:grid-cols-1 lg:grid-cols-2 gap-6 w-full justify-items-center">
+                    <AnimatePresence onExitComplete={() => setProjetos(data.allProjetos.slice((page - 1) * limit, page * limit))}>
+                        {projetos.map((projeto, index) => (
+                            <Project key={index} projeto={projeto} />
+                        ))}
+                    </AnimatePresence>
+                </div>
+            </main>
+            <Pagination count={count._allProjetosMeta.count} setPage={setPage} page={page} />
+        </Layout>
         </>
     )
 }

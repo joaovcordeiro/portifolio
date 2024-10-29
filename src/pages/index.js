@@ -86,7 +86,6 @@ export default function Home({ data, NEXT_WHAT_NUMBER }) {
 }
 
 export async function getStaticProps() {
-  const { NEXT_WHAT_NUMBER } = process.env
 
   const contentQuery = `query {
     curriculo {
@@ -104,8 +103,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      data,
-      NEXT_WHAT_NUMBER
+      data
     }
   }
 }
